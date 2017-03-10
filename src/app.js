@@ -1,8 +1,11 @@
+import $ from 'jquery';
 import {Drone} from './Models/drone.js';
 import {Car} from './Models/car.js';
 import {Error} from './Models/error.js';
 import {fleetSeeder} from './Services/fleet-data-seeder.js';
 import {FleetDataService} from './Services/fleet-data-service.js';
+import {Button} from './UI/button.js';
+
 
 console.log("module");
 let service = new FleetDataService();
@@ -30,3 +33,6 @@ console.log('Filtered cars');
 for(let filteredCar of filteredCars){
     console.log(filteredCar.license);
 }
+
+let b = new Button('Click');
+b.appendToElement($('body'));
