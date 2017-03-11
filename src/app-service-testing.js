@@ -5,6 +5,8 @@ import {Error} from './Models/error.js';
 import {fleetSeeder} from './Services/fleet-data-seeder.js';
 import {FleetDataService} from './Services/fleet-data-service.js';
 import {Button} from './UI/button.js';
+import {Image} from './UI/image.js';
+import {TitleBar} from './UI/title-bar.js';
 
 
 console.log("module");
@@ -34,5 +36,16 @@ for(let filteredCar of filteredCars){
     console.log(filteredCar.license);
 }
 
-let b = new Button('Click');
+let tb = new TitleBar('Drones');
+tb.addLink('Home','');
+tb.addLink('Cars','');
+tb.addLink('Drones','');
+tb.addLink('Map','');
+tb.appendToElement($('body'));
+
+let b = new Button('Click me');
 b.appendToElement($('body'));
+
+let i = new Image('./src/UI/images/drone.jpg');
+i.appendToElement($('body'));
+ 

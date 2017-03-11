@@ -29,7 +29,7 @@ export let fleetSeeder = [
         make : 'Tesla',
         model: 'Quick Transport',
         miles: '15600',
-        latLong: '43.779233 -73.3329'
+        latLong: '43.779233 -73.3310'
     },
     {
         license: 'AT2000',
