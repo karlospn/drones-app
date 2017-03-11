@@ -7,13 +7,13 @@
         <script src="node_modules/traceur/bin/traceur.js"></script>
         <script src="node_modules/systemjs/dist/system.js"></script>
         <script src="node_modules/material-design-lite/dist/material.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&callback=initMap" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOURGOOGLEAPIKEY&callback=initApp" async defer></script>
     </head>
     <body>
         <div id="title-bar"></div>
         <div id="table"></div>
         <script>
-            function initMap()
+            function initApp()
             {
                 System.paths['jquery'] = './node_modules/jquery/dist/jquery.js';
                 System.import('src/app-ui-testing.js');
