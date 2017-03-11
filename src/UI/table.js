@@ -22,13 +22,13 @@ export class Table extends BaseElement {
     appendBody()
     {
         let body = '';
-        for(let data of this.data){
+        for(let data of this.data)
+        {    
             body += `<tr>`;
-            body += `<td>${data.license}</td>`;
-            body += `<td>${data.model}</td>`;
-            body += `<td>${data.latLong}</td>`;
-            body += `<td>${data.miles}</td>`;
-            body += `<td>${data.make}</td>`;
+            for(let property of this.headers){
+                let field = data[property];
+                body += `<td class="mdl-data-table__cell--non-numeric">${field}</td>`;
+            }
             body += `</tr>`;
         }
         return body;
@@ -39,18 +39,16 @@ export class Table extends BaseElement {
 
         let header = this.appendHeaders();
         let body = this.appendBody();
-        return `
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-            <thead>
-                <tr>
-                 ${header}
-                </tr>
-            </thead>
-            <tbody>
-                ${body};
-            </tbody>
-        </table>
-        `;
+        return `<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                        ${header}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${body};
+                    </tbody>
+                </table>`;
     }
 
     enableJS(){
